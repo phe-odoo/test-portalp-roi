@@ -7,8 +7,8 @@ class UuidMixin(models.AbstractModel):
     _name = "uuid.mixin"
     _description = "UUID Mixin"
 
-    uuid = fields.Char(tracking=True)
-    uuid_id = fields.Many2one(comodel_name="uuid", string="UUID reference record")
+    uuid = fields.Char(tracking=True, readonly=True)
+    uuid_id = fields.Many2one(comodel_name="uuid", string="UUID reference record", readonly=True)
 
 
     def generate_uuid(self):

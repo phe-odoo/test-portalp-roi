@@ -20,6 +20,13 @@
                         </field>
                     </group>
                 </xpath>
+
+                <xpath expr="//field[@name='owner_user_id']" position="after">
+                    <field name="contract_line_id" />
+                </xpath>
+                <xpath expr="//field[@name='location']" position="after">
+                    <field name="location_id" />
+                </xpath>
             </field>
         </record>
 

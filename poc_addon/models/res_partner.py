@@ -16,6 +16,8 @@ class ResPartner(models.Model):
 
     # Todo: hide if not vendor
     management_center_id = fields.Many2one(comodel_name="crm.team")
+    is_client = fields.Boolean()
+    is_seller = fields.Boolean()
     is_location = fields.Boolean()
 
 

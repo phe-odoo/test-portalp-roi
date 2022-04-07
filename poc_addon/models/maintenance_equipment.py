@@ -8,6 +8,9 @@ class MaintenanceEquipment(models.Model):
 
     supplier_id = fields.Many2one(comodel_name="res.partner")
     bom_id = fields.Many2one(comodel_name="mrp.bom")
+    location_id = fields.Many2one(comodel_name="res.partner")
+    contract_line_id = fields.Many2one(comodel_name="sale.subscription.line")
+    contract_id = fields.Many2one(related="contract_line_id.analytic_account_id")
     equipment_detail_ids = fields.One2many(comodel_name="maintenance.equipment.details", inverse_name="equipment_id")
 
 

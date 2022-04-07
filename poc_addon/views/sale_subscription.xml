@@ -10,6 +10,14 @@
                 <xpath expr="//field[@name='recurring_invoice_line_ids']/tree/field[@name='name']" position="after">
                     <field name="date_start" />
                     <field name="date_end" />
+                    <field name="equipment_id" />
+                    <field name="template_id" />
+                    <field name="supplier_id" />
+                </xpath>
+                <xpath expr="//group[@name='main']//group[2]" position="inside">
+                    <field name="sell_date" />
+                    <field name="guarantee_start_date" />
+                    <field name="guarantee_end_date" />
                 </xpath>
             </field>
         </record>
