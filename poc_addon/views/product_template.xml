@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="product_template_form_view" model="ir.ui.view">
+            <field name="name">product_template_form_view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_lots_and_weight']//label[@for='volume']" position="before">
+                    <field name="length" />
+                    <field name="width" />
+                    <field name="height" />
+                </xpath>
+                <xpath expr="//group[@name='group_standard_price']" position="inside">
+                    <field name="activity_domain" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_product_supplier_inherit" model="ir.ui.view">
+            <field name="name">view_product_supplier_inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="purchase.view_product_supplier_inherit" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='seller_ids']" position="before">
+                       <group>
+                           <field name="main_supplier_domain" invisible="1"/>
+                           <field name="main_supplier_id" options="{'no_create': True}"/>
+                       </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

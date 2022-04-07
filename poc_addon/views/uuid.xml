@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="uuid_tree" model="ir.ui.view">
+            <field name="name">uuid.tree</field>
+            <field name="model">uuid</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="uuid" />
+                    <field name="model" />
+                    <field name="res_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="uuid_action" model="ir.actions.act_window">
+            <field name="name">UUID list</field>
+            <field name="res_model">uuid</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+    </data>
+</odoo>
