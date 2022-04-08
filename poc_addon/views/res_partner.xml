@@ -9,8 +9,10 @@
                 <field name="arch" type="xml">
                     <xpath expr="//sheet" position="before">
                         <header>
-                            <button type="object" name="action_confirm_vendor" string="Confirm Vendor" attrs="{'invisible': ['|', ('is_seller', '!=', True), ('vendor_state', '=', 'confirmed')]}" class="oe_button"/>
-                            <field name="vendor_state" widget="statusbar" attrs="{'invisible': [('is_seller', '!=', True)]}"/>
+                            <button type="object" name="action_confirm_vendor" string="Confirm Vendor" class="oe_button"/>
+<!--                            attrs="{'invisible': ['|', ('is_seller', '!=', True), ('vendor_state', '=', 'confirmed')]}" -->
+                            <field name="vendor_state" widget="statusbar" />
+<!--                            attrs="{'invisible': [('is_seller', '!=', True)]}"-->
                         </header>
                     </xpath>
 
