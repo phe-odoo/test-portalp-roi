@@ -16,10 +16,6 @@
                         </header>
                     </xpath>
 
-                    <xpath expr="//div[hasclass('o_address_format')]" position="after">
-                        <field name="is_location" />
-                    </xpath>
-
                     <xpath expr="//page[@name='internal_notes']" position="inside">
                         <group><field name="uuid" /></group>
                     </xpath>
@@ -30,6 +26,10 @@
                     
                     <xpath expr="//page[@name='sales_purchases']//group[@name='sale']" position="inside">
                         <field name="is_client" />
+                        <field name="is_location" />
+
+                     </xpath>
+                    <xpath expr="//page[@name='sales_purchases']//group[@name='purchase']" position="inside">                  
                         <field name="is_seller" />
                     </xpath>
 
