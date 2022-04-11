@@ -24,19 +24,16 @@
                                     <field name="picture"/>
                                     <templates>
                                         <t t-name="kanban-box">
-                                            <div class="oe_kanban_global_click" style="text-align:center; ">
-                                                    <img style="width:250px; height: 250px; " alt="Product picture" t-att-src="kanban_image('product.picture', 'picture', record.id.raw_value)"/>
+                                            <div class="oe_kanban_global_click" style="display: grid; place-items: center; width:250px; height: 250px">
+                                                <img style="max-width: 250px; max-height:250px;" alt="Product picture" t-att-src="kanban_image('product.picture', 'picture', record.id.raw_value)"/>
                                             </div>
                                         </t>
                                     </templates>
                                 </kanban>
                                 <form>
                                     <sheet>
-                                        <group attrs="{'invisible': [('picture', '=', False)]}" >
-                                            <field name="picture" widget="image" nolabel="1" readonly="1"/>
-                                        </group>
-                                        <group attrs="{'invisible': [('picture', '!=', False)]}">
-                                            <field name="picture" />
+                                        <group>
+                                            <field name="picture" widget="image" />
                                         </group>
                                     </sheet>
                                 </form>

@@ -7,4 +7,4 @@ class ProductPicture(models.Model):
     _description = "A picture for a product"
 
     product_id = fields.Many2one(comodel_name="product.template")
-    picture = fields.Binary()
+    picture = fields.Binary(required=True)
