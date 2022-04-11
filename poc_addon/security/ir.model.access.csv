@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 uuid_rule_access,uuid_rule_access,model_uuid,base.group_user,1,1,1,1
+agreement_rule_access,agreement_rule_access,model_agreement,base.group_user,1,1,1,1
+product_picture_rule_access,product_picture_rule_access,model_product_picture,base.group_user,1,1,1,1
 maintenance_equipment_details_rule_access,maintenance_equipment_details_rule_access,model_maintenance_equipment_details,base.group_user,1,1,1,1

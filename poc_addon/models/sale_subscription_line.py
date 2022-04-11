@@ -9,6 +9,5 @@ class SaleSubscriptionLine(models.Model):
     date_start = fields.Date()
     date_end = fields.Date()
 
-    equipment_id = fields.Many2one(comodel_name="maintenance.equipment")
-    template_id = fields.Many2one(comodel_name="sale.subscription.template", string="Period")
-    supplier_id = fields.Many2one(comodel_name="res.partner")
+
+

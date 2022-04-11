@@ -3,7 +3,7 @@
 {
     'name': "PortalP POC addon",
     'category': "",
-    'version': "15.0.0.0.4",
+    'version': "15.0.0.0.5",
     'installable': True,
     'sequence': 1,
     
@@ -27,6 +27,7 @@
         # Security
         'security/ir.model.access.csv',
         # Views
+        'views/agreement.xml',
         'views/res_partner.xml',
         'views/product_template.xml',
         'views/maintenance_equipment.xml',

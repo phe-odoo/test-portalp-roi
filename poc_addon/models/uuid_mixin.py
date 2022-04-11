@@ -33,5 +33,8 @@ class UuidMixin(models.AbstractModel):
         res.generate_uuid()
         return res
 
+    def unlink(self):
+        self.uuid_id.unlink()
+        return super(UuidMixin, self).unlink()
 
 

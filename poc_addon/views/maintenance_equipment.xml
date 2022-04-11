@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='product_information']" position="inside">
                     <group string="Equipment details">
-                        <field name="supplier_id" />
+                        <field name="distributor_id" />
                         <field name="bom_id" />
                         <field name="equipment_detail_ids" colspan="2" nolabel="1">
                             <tree editable="bottom">

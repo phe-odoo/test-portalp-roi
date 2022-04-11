@@ -14,6 +14,8 @@ class ProductTemplate(models.Model):
     main_supplier_domain = fields.Many2many(comodel_name="res.partner", compute="_compute_main_supplier_domain")
     main_supplier_id = fields.Many2one(comodel_name="res.partner", domain="[('id', 'in', main_supplier_domain)]")
 
+    picture_ids = fields.One2many(comodel_name="product.picture", inverse_name="product_id")
+
 
     @api.depends('seller_ids')
     def _compute_main_supplier_domain(self):

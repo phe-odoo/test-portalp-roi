@@ -2,7 +2,18 @@
 <odoo>
     <data>
 
+        <!-- Technical -->
         <menuitem id="uuid_menu" name="UUID list" parent="base.next_id_9" action="uuid_action"/>
+
+        <!-- Agreements Module -->
+        <menuitem name="Agreements"
+                    id="agreements_app_menu"
+                    web_icon="poc_addon,static/description/contract_sign.png" />
+
+        <menuitem parent="agreements_app_menu"
+                  name="Agreements"
+                  id="agreements_menu"
+                  action="agreement_action" />
 
     </data>
 </odoo>

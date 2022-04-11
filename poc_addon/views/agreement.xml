@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="agreement_tree" model="ir.ui.view">
+            <field name="name">agreement.tree</field>
+            <field name="model">agreement</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="partner_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="agreement_kanban" model="ir.ui.view">
+            <field name="name">agreement.kanban</field>
+            <field name="model">agreement</field>
+            <field name="arch" type="xml">
+                <kanban records_draggable="false">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <h3><field name="name" /></h3>
+                                <div>
+                                    <span class="icon"><i class="fa fa-user" title="Contact" /></span>
+                                    <field name="partner_id" />
+                                </div>
+                                <div style="color:grey; text-align:right;"><field name="contract_qty" /> Contract line(s)</div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="agreement_form" model="ir.ui.view">
+            <field name="name">agreement.form</field>
+            <field name="model">agreement</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <h1><field name="name" /></h1>
+                        <group string="Informations">
+                            <field name="partner_id" />
+                        </group>
+                        <group string="Contracts">
+                            <field name="contract_ids" colspan="2" nolabel="1" context="{'default_partner_id': partner_id}">
+                                <tree>
+                                    <field name="code" />
+                                    <field name="partner_id" />
+                                    <field name="equipment_id" />
+                                    <field name="template_id" />
+                                    <field name="stage_id" widget="badge" />
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <!-- Chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="agreement_search" model="ir.ui.view">
+            <field name="name">agreement.search</field>
+            <field name="model">agreement</field>
+            <field name="arch" type="xml">
+                <search >
+                    <field name="name" />
+                    <field name="partner_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="agreement_action" model="ir.actions.act_window">
+            <field name="name">Agreements</field>
+            <field name="res_model">agreement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

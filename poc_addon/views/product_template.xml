@@ -15,6 +15,35 @@
                 <xpath expr="//group[@name='group_standard_price']" position="inside">
                     <field name="activity_domain" />
                 </xpath>
+                <xpath expr="//notebook//page[last()]" position="after">
+                    <page string="Pictures">
+                        <group>
+                            <field name="picture_ids" colspan="2" nolabel="1" context="{'default_product_id': id}">
+                                <kanban records_draggable="false">
+                                    <field name="id"/>
+                                    <field name="picture"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click" style="text-align:center; ">
+                                                    <img style="width:250px; height: 250px; " alt="Product picture" t-att-src="kanban_image('product.picture', 'picture', record.id.raw_value)"/>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                                <form>
+                                    <sheet>
+                                        <group attrs="{'invisible': [('picture', '=', False)]}" >
+                                            <field name="picture" widget="image" nolabel="1" readonly="1"/>
+                                        </group>
+                                        <group attrs="{'invisible': [('picture', '!=', False)]}">
+                                            <field name="picture" />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
             </field>
         </record>
 
