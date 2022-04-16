@@ -10,7 +10,6 @@ class UuidMixin(models.AbstractModel):
     uuid = fields.Char(tracking=True, readonly=True)
     uuid_id = fields.Many2one(comodel_name="uuid", string="UUID reference record", readonly=True)
 
-
     def generate_uuid(self):
         self.ensure_one()
         self.uuid_id = self.env['uuid'].sudo().create({
@@ -36,5 +35,4 @@ class UuidMixin(models.AbstractModel):
     def unlink(self):
         self.uuid_id.unlink()
         return super(UuidMixin, self).unlink()
-
 

@@ -3,7 +3,7 @@
 {
     'name': "PortalP POC addon",
     'category': "",
-    'version': "15.0.0.0.7",
+    'version': "15.0.1.0.0",
     'installable': True,
     'sequence': 1,
     

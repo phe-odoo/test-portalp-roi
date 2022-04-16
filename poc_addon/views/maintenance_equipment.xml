@@ -21,6 +21,9 @@
                     </group>
                 </xpath>
 
+                <xpath expr="//field[@name='warranty_date']" position="before">
+                    <field name="warranty_start_date" />
+                </xpath>
                 <xpath expr="//field[@name='owner_user_id']" position="after">
                     <field name="contract_line_id" />
                 </xpath>

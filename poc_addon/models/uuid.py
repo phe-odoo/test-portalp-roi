@@ -10,4 +10,3 @@ class Uuid(models.Model):
     res_id = fields.Integer()
 
 
-

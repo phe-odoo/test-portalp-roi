@@ -7,13 +7,6 @@
             <field name="model">sale.subscription</field>
             <field name="inherit_id" ref="sale_subscription.sale_subscription_view_form" />
             <field name="arch" type="xml">
-<!--                <xpath expr="//field[@name='recurring_invoice_line_ids']/tree/field[@name='name']" position="after">-->
-<!--                    <field name="date_start" />-->
-<!--                    <field name="date_end" />-->
-<!--                    <field name="equipment_id" />-->
-<!--                    <field name="template_id" />-->
-<!--                    <field name="distributor_code" />-->
-<!--                </xpath>-->
                 <xpath expr="//group[@name='main']//group[2]" position="inside">
                     <field name="sell_date" />
                     <separator/>

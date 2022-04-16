@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _
+from odoo import fields, models
 
 
 class MaintenanceEquipment(models.Model):
@@ -14,9 +14,11 @@ class MaintenanceEquipment(models.Model):
     location_id = fields.Many2one(comodel_name="res.partner", string="Site")
     equipment_detail_ids = fields.One2many(comodel_name="maintenance.equipment.details", inverse_name="equipment_id")
 
-    # tODO: view
-    guarantee_start_date = fields.Date()
-    guarantee_end_date = fields.Date()
-    installation_date = fields.Date()
+    warranty_start_date = fields.Date()
+
+    # For other dates, we could use standard fields ?
+    # effective_date = date de mise en service ?
+    # assign_date = installation ?
+
 
 
